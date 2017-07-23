@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="timer">
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
+    </div>
+    <style>
+
+    </style>
+
+    <script>
+    const hour = document.querySelector('.hour')
+    const minute = document.querySelector('.minute')
+    const second = document.querySelector('.second')
+    const now = new Date();
+    let seconds = now.getSeconds()
+    let minutes = now.getMinutes()
+    let hours = now.getHours()
+    function setTime() {
+
+      if (seconds > 0) {
+        seconds -= 1
+      }
+      second.innerHTML = seconds
+      if (seconds === 0) {
+        minutes -= 1
+      }
+      minute.innerHTML = minutes
+      if (minutes === 0) {
+        hours -= 1
+      }
+      hour.innerHTML = hours
+    }
+
+    setInterval(setTime, 1000);
+
+    </script>
+  </body>
+</html>
